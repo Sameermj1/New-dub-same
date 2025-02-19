@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/app.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/routes/processVideo.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/pages/index.tsx"
+    }
+  ]
+}
